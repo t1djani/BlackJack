@@ -1,0 +1,16 @@
+common: &common
+  adapter:  postgresql
+  encoding: unicode
+  pool: 5
+  username: onthego # OR your username
+  password: kenshin
+  schema_search_path: "public,hstore,uuid"
+
+development:
+  <<: *common
+  database: blackjack_dev # OR your database name
+
+test:
+  <<: *common
+  database: blackjack_test # OR your database name
+  min_messages: WARNING
